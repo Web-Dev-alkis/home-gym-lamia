@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { brand } from "@/data/content";
 
@@ -38,8 +39,16 @@ export default function Hero() {
       id="top"
       className="relative flex h-[100svh] min-h-[720px] w-full items-center overflow-hidden bg-ink"
     >
-      {/* Background system: layered glow, grid and grain — cinematic without stock photography */}
+      {/* Background system: photo, layered glow, grid and grain */}
       <div className="pointer-events-none absolute inset-0">
+        <Image
+          src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=2400&auto=format&fit=crop"
+          alt=""
+          fill
+          priority
+          className="object-cover opacity-50"
+        />
+        <div className="absolute inset-0 bg-ink/60" />
         <div
           ref={glowRef}
           className="absolute left-1/2 top-1/2 h-[80vmax] w-[80vmax] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40 blur-[120px] transition-transform duration-300 ease-out"

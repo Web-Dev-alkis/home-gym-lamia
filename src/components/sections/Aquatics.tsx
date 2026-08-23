@@ -4,6 +4,14 @@ import VisualPanel from "@/components/ui/VisualPanel";
 import { summerPrograms } from "@/data/content";
 
 const variants = ["waves", "grid", "diagonal"] as const;
+const images: Record<string, string> = {
+  "kids-pool-academy":
+    "https://images.unsplash.com/photo-1530549387789-4c1017266635?q=80&w=1200&auto=format&fit=crop",
+  "summer-camp":
+    "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop",
+  "summer-pool-side":
+    "https://images.unsplash.com/photo-1600965962102-9d260a71890d?q=80&w=1200&auto=format&fit=crop",
+};
 
 export default function Aquatics() {
   return (
@@ -28,7 +36,12 @@ export default function Aquatics() {
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
           {summerPrograms.map((program, i) => (
             <Reveal key={program.id} delay={i * 120} className="group">
-              <VisualPanel variant={variants[i % variants.length]} className="transition-transform duration-500 group-hover:-translate-y-2" />
+              <VisualPanel
+                variant={variants[i % variants.length]}
+                image={images[program.id]}
+                imageAlt={program.title}
+                className="transition-transform duration-500 group-hover:-translate-y-2"
+              />
               <h3 className="mt-6 font-display text-2xl italic text-paper">{program.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-paper-dim">{program.description}</p>
             </Reveal>

@@ -1,16 +1,26 @@
 import clsx from "clsx";
+import Image from "next/image";
 
 type VisualPanelProps = {
   variant?: "rings" | "waves" | "grid" | "diagonal";
   label?: string;
   className?: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 /**
- * Abstract art-directed panel used in place of photography — keeps the
- * premium/editorial feel consistent without relying on stock imagery.
+ * Photo panel with the site's art-directed overlay (grain, gradient, gold
+ * radial glow). Falls back to the abstract SVG variants when no `image` is
+ * supplied.
  */
-export default function VisualPanel({ variant = "rings", label, className }: VisualPanelProps) {
+export default function VisualPanel({
+  variant = "rings",
+  label,
+  className,
+  image,
+  imageAlt,
+}: VisualPanelProps) {
   return (
     <div
       className={clsx(
@@ -18,10 +28,19 @@ export default function VisualPanel({ variant = "rings", label, className }: Vis
         className
       )}
     >
+      {image && (
+        <Image
+          src={image}
+          alt={imageAlt ?? label ?? ""}
+          fill
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="object-cover"
+        />
+      )}
       <div className="grain absolute inset-0" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ink/90" />
 
-      {variant === "rings" && (
+      {!image && variant === "rings" && (
         <svg
           aria-hidden
           className="absolute left-1/2 top-1/2 h-[140%] w-[140%] -translate-x-1/2 -translate-y-1/2 opacity-70"
@@ -41,7 +60,7 @@ export default function VisualPanel({ variant = "rings", label, className }: Vis
         </svg>
       )}
 
-      {variant === "waves" && (
+      {!image && variant === "waves" && (
         <svg
           aria-hidden
           className="absolute inset-0 h-full w-full opacity-70"
@@ -59,7 +78,7 @@ export default function VisualPanel({ variant = "rings", label, className }: Vis
         </svg>
       )}
 
-      {variant === "grid" && (
+      {!image && variant === "grid" && (
         <svg
           aria-hidden
           className="absolute inset-0 h-full w-full opacity-60"
@@ -92,7 +111,7 @@ export default function VisualPanel({ variant = "rings", label, className }: Vis
         </svg>
       )}
 
-      {variant === "diagonal" && (
+      {!image && variant === "diagonal" && (
         <svg
           aria-hidden
           className="absolute inset-0 h-full w-full opacity-70"

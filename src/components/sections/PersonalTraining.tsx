@@ -43,7 +43,11 @@ export default function PersonalTraining() {
         </Reveal>
 
         <Reveal as="div" delay={150} className="order-1 lg:order-2">
-          <VisualPanel variant="rings" label="Personal Training / One to One" />
+          <VisualPanel
+            variant="rings"
+            label="Personal Training / One to One"
+            image="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop"
+          />
         </Reveal>
       </div>
     </section>
