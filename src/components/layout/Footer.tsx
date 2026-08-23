@@ -76,11 +76,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex border-t border-line-inverse pt-8 text-xs text-text-inverse-dim/70 md:justify-end">
-          <p className="uppercase tracking-[0.2em]">{brand.tagline}</p>
-        </div>
-
-        <div className="flex flex-col items-start justify-between gap-4 border-t border-line-inverse pt-6 text-xs text-text-inverse-dim md:flex-row md:items-center">
+        <div className="flex flex-col items-start justify-between gap-4 border-t border-line-inverse pt-8 text-xs text-text-inverse-dim md:flex-row md:items-center">
           <small className="not-italic">
             © {new Date().getFullYear()} ALKIS PAPAPOSTOLOY — Web Design &amp; Development. All
             rights reserved.

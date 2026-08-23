@@ -102,6 +102,9 @@ export default function Hero() {
             Γυμναστήριο, personal training, group classes και πισίνα — ένας χώρος στη Λαμία
             φτιαγμένος για ανθρώπους που θέλουν πραγματικά αποτελέσματα.
           </p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-red">
+            {brand.tagline}
+          </p>
         </div>
 
         <div
