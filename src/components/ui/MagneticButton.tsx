@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, type ReactNode, type MouseEvent } from "react";
+import Link from "next/link";
 import clsx from "clsx";
 
 type MagneticButtonProps = {
@@ -33,20 +34,16 @@ export default function MagneticButton({
     el.style.transform = "translate(0, 0)";
   };
 
-  return (
-    <a
-      ref={ref}
-      href={href}
-      onMouseMove={handleMove}
-      onMouseLeave={handleLeave}
-      className={clsx(
-        "group relative inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] transition-[transform,background-color,color] duration-300 ease-out will-change-transform",
-        variant === "solid"
-          ? "bg-gold text-ink hover:bg-gold-soft"
-          : "border border-line-strong text-paper hover:border-gold hover:text-gold",
-        className
-      )}
-    >
+  const buttonClassName = clsx(
+    "group relative inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] transition-[transform,background-color,color,box-shadow] duration-300 ease-out will-change-transform",
+    variant === "solid"
+      ? "bg-red text-white shadow-[0_14px_30px_-12px_rgba(227,27,44,0.55)] hover:bg-red-deep hover:shadow-[0_18px_36px_-10px_rgba(227,27,44,0.6)]"
+      : "border border-white/30 text-white hover:border-red hover:text-red",
+    className
+  );
+
+  const content = (
+    <>
       <span>{children}</span>
       <svg
         aria-hidden
@@ -64,6 +61,34 @@ export default function MagneticButton({
           strokeLinejoin="round"
         />
       </svg>
+    </>
+  );
+
+  const isInternal = href.startsWith("/");
+
+  if (isInternal) {
+    return (
+      <Link
+        ref={ref}
+        href={href}
+        onMouseMove={handleMove}
+        onMouseLeave={handleLeave}
+        className={buttonClassName}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      ref={ref}
+      href={href}
+      onMouseMove={handleMove}
+      onMouseLeave={handleLeave}
+      className={buttonClassName}
+    >
+      {content}
     </a>
   );
 }

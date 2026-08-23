@@ -35,10 +35,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section
-      id="top"
-      className="relative flex h-[100svh] min-h-[720px] w-full items-center overflow-hidden bg-ink"
-    >
+    <section className="relative flex h-[100svh] min-h-[720px] w-full items-center overflow-hidden bg-ink">
       {/* Background system: photo, layered glow, grid and grain */}
       <div className="pointer-events-none absolute inset-0">
         <Image
@@ -54,7 +51,7 @@ export default function Hero() {
           className="absolute left-1/2 top-1/2 h-[80vmax] w-[80vmax] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40 blur-[120px] transition-transform duration-300 ease-out"
           style={{
             background:
-              "radial-gradient(circle, rgba(201,161,90,0.35) 0%, rgba(201,161,90,0.08) 45%, transparent 70%)",
+              "radial-gradient(circle, rgba(227,27,44,0.4) 0%, rgba(227,27,44,0.1) 45%, transparent 70%)",
           }}
         />
         <div
@@ -75,19 +72,19 @@ export default function Hero() {
       >
         <p
           data-reveal="visible"
-          className="mb-8 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.35em] text-gold animate-fade-up"
+          className="mb-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-red animate-fade-up"
           style={{ animationDelay: "0.1s" }}
         >
-          <span className="h-px w-10 bg-gold" />
+          <span className="h-px w-10 bg-red" />
           HomeGym &middot; {brand.location}
         </p>
 
-        <h1 className="max-w-5xl font-display text-[clamp(3rem,9vw,7.5rem)] leading-[0.95] tracking-tight text-paper text-balance">
+        <h1 className="max-w-5xl font-display text-[clamp(3rem,9vw,7.5rem)] leading-[0.95] tracking-tight text-white text-balance">
           <span className="block opacity-0 animate-fade-up" style={{ animationDelay: "0.2s" }}>
             Τίποτα δεν λειτουργεί
           </span>
           <span
-            className="block italic text-gold opacity-0 animate-fade-up"
+            className="block italic text-red opacity-0 animate-fade-up"
             style={{ animationDelay: "0.38s" }}
           >
             αν δεν λειτουργήσεις
@@ -101,7 +98,7 @@ export default function Hero() {
           className="mt-10 flex max-w-xl flex-col gap-10 opacity-0 animate-fade-up sm:flex-row sm:items-end sm:justify-between"
           style={{ animationDelay: "0.75s" }}
         >
-          <p className="max-w-sm text-base leading-relaxed text-paper-dim">
+          <p className="max-w-sm text-base leading-relaxed text-text-inverse-dim">
             Γυμναστήριο, personal training, group classes και πισίνα — ένας χώρος στη Λαμία
             φτιαγμένος για ανθρώπους που θέλουν πραγματικά αποτελέσματα.
           </p>
@@ -111,8 +108,8 @@ export default function Hero() {
           className="mt-12 flex flex-wrap items-center gap-5 opacity-0 animate-fade-up"
           style={{ animationDelay: "0.9s" }}
         >
-          <MagneticButton href="#ypiresies">Οι Υπηρεσίες μας</MagneticButton>
-          <MagneticButton href="#epikoinonia" variant="outline">
+          <MagneticButton href="/services">Οι Υπηρεσίες μας</MagneticButton>
+          <MagneticButton href="/contact" variant="outline">
             Επικοινωνία
           </MagneticButton>
         </div>
@@ -123,11 +120,11 @@ export default function Hero() {
         style={{ animationDelay: "1.2s" }}
         aria-hidden
       >
-        <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-paper-dim">
+        <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-text-inverse-dim">
           Scroll
         </span>
-        <span className="relative h-12 w-px overflow-hidden bg-line-strong">
-          <span className="absolute inset-x-0 top-0 h-1/2 animate-[fade-up_1.8s_ease-in-out_infinite] bg-gold" />
+        <span className="relative h-12 w-px overflow-hidden bg-line-inverse-strong">
+          <span className="absolute inset-x-0 top-0 h-1/2 animate-[fade-up_1.8s_ease-in-out_infinite] bg-red" />
         </span>
       </div>
     </section>

@@ -12,10 +12,10 @@ export default function Marquee({ items, className }: MarqueeProps) {
         {loop.map((item, i) => (
           <span
             key={`${item}-${i}`}
-            className="flex items-center gap-10 font-display text-[clamp(2.5rem,7vw,6rem)] italic leading-none text-transparent [-webkit-text-stroke:1px_var(--color-paper-dim)]"
+            className="flex items-center gap-10 font-display text-[clamp(2.5rem,7vw,6rem)] italic leading-none text-transparent [-webkit-text-stroke:1px_var(--color-line-strong)]"
           >
             {item}
-            <span aria-hidden className="text-gold not-italic [-webkit-text-stroke:0]">
+            <span aria-hidden className="text-red not-italic [-webkit-text-stroke:0]">
               ✳
             </span>
           </span>

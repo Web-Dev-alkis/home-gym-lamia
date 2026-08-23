@@ -10,7 +10,7 @@ type VisualPanelProps = {
 };
 
 /**
- * Photo panel with the site's art-directed overlay (grain, gradient, gold
+ * Photo panel with the site's art-directed overlay (grain, gradient, red
  * radial glow). Falls back to the abstract SVG variants when no `image` is
  * supplied.
  */
@@ -24,7 +24,7 @@ export default function VisualPanel({
   return (
     <div
       className={clsx(
-        "relative isolate flex aspect-[4/5] w-full items-end overflow-hidden rounded-sm bg-ink-soft",
+        "relative isolate flex aspect-[4/5] w-full items-end overflow-hidden rounded-xl bg-ink-soft",
         className
       )}
     >
@@ -53,7 +53,7 @@ export default function VisualPanel({
               cx="200"
               cy="200"
               r={r}
-              stroke={r === 140 ? "var(--color-gold)" : "var(--color-line-strong)"}
+              stroke={r === 140 ? "var(--color-red)" : "var(--color-line-inverse-strong)"}
               strokeWidth={r === 140 ? 1.5 : 1}
             />
           ))}
@@ -71,7 +71,7 @@ export default function VisualPanel({
             <path
               key={y}
               d={`M-20 ${y} Q 100 ${y - 40} 200 ${y} T 420 ${y}`}
-              stroke={i === 2 ? "var(--color-gold)" : "var(--color-line-strong)"}
+              stroke={i === 2 ? "var(--color-red)" : "var(--color-line-inverse-strong)"}
               strokeWidth={i === 2 ? 1.5 : 1}
             />
           ))}
@@ -92,7 +92,7 @@ export default function VisualPanel({
               y1="0"
               x2={i * 50}
               y2="500"
-              stroke="var(--color-line-strong)"
+              stroke="var(--color-line-inverse-strong)"
               strokeWidth="1"
             />
           ))}
@@ -103,11 +103,11 @@ export default function VisualPanel({
               y1={i * 50}
               x2="400"
               y2={i * 50}
-              stroke="var(--color-line-strong)"
+              stroke="var(--color-line-inverse-strong)"
               strokeWidth="1"
             />
           ))}
-          <line x1="0" y1="250" x2="400" y2="250" stroke="var(--color-gold)" strokeWidth="1.5" />
+          <line x1="0" y1="250" x2="400" y2="250" stroke="var(--color-red)" strokeWidth="1.5" />
         </svg>
       )}
 
@@ -125,7 +125,7 @@ export default function VisualPanel({
               y1="0"
               x2={-100 + i * 45 + 200}
               y2="500"
-              stroke={i === 7 ? "var(--color-gold)" : "var(--color-line-strong)"}
+              stroke={i === 7 ? "var(--color-red)" : "var(--color-line-inverse-strong)"}
               strokeWidth={i === 7 ? 1.5 : 1}
             />
           ))}
@@ -136,12 +136,12 @@ export default function VisualPanel({
         className="pointer-events-none absolute inset-0 opacity-40"
         style={{
           background:
-            "radial-gradient(circle at 30% 20%, rgba(201,161,90,0.25), transparent 55%)",
+            "radial-gradient(circle at 30% 20%, rgba(227,27,44,0.3), transparent 55%)",
         }}
       />
 
       {label && (
-        <span className="relative z-10 p-6 font-display text-sm italic tracking-wide text-paper-dim md:p-8">
+        <span className="relative z-10 p-6 font-display text-sm italic tracking-wide text-text-inverse-dim md:p-8">
           {label}
         </span>
       )}

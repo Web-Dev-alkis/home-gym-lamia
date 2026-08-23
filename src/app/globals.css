@@ -1,27 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --color-ink: #0a0a0a;
-  --color-ink-soft: #131315;
-  --color-ink-elevated: #1a1a1c;
-  --color-paper: #f4f1ea;
-  --color-paper-dim: #c9c4b6;
-  --color-gold: #c9a15a;
-  --color-gold-soft: #e3c893;
-  --color-line: rgba(244, 241, 234, 0.12);
-  --color-line-strong: rgba(244, 241, 234, 0.22);
+  --color-paper: #ffffff;
+  --color-paper-soft: #f6f5f2;
+  --color-ink: #131218;
+  --color-ink-soft: #1d1c22;
+  --color-ink-elevated: #26252c;
+  --color-text: #16151b;
+  --color-text-dim: #6e6c76;
+  --color-text-inverse: #ffffff;
+  --color-text-inverse-dim: #b7b5bf;
+  --color-red: #e31b2c;
+  --color-red-deep: #b4121f;
+  --color-red-soft: #fbeaea;
+  --color-line: rgba(19, 18, 24, 0.08);
+  --color-line-strong: rgba(19, 18, 24, 0.16);
+  --color-line-inverse: rgba(255, 255, 255, 0.14);
+  --color-line-inverse-strong: rgba(255, 255, 255, 0.26);
 }
 
 @theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-soft: var(--color-paper-soft);
   --color-ink: var(--color-ink);
   --color-ink-soft: var(--color-ink-soft);
   --color-ink-elevated: var(--color-ink-elevated);
-  --color-paper: var(--color-paper);
-  --color-paper-dim: var(--color-paper-dim);
-  --color-gold: var(--color-gold);
-  --color-gold-soft: var(--color-gold-soft);
+  --color-text: var(--color-text);
+  --color-text-dim: var(--color-text-dim);
+  --color-text-inverse: var(--color-text-inverse);
+  --color-text-inverse-dim: var(--color-text-inverse-dim);
+  --color-red: var(--color-red);
+  --color-red-deep: var(--color-red-deep);
+  --color-red-soft: var(--color-red-soft);
   --color-line: var(--color-line);
   --color-line-strong: var(--color-line-strong);
+  --color-line-inverse: var(--color-line-inverse);
+  --color-line-inverse-strong: var(--color-line-inverse-strong);
 
   --font-display: var(--font-playfair);
   --font-sans: var(--font-inter);
@@ -50,7 +64,7 @@
 }
 
 * {
-  scrollbar-color: var(--color-gold) transparent;
+  scrollbar-color: var(--color-red) transparent;
 }
 
 html {
@@ -58,8 +72,8 @@ html {
 }
 
 body {
-  background: var(--color-ink);
-  color: var(--color-paper);
+  background: var(--color-paper);
+  color: var(--color-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -99,8 +113,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-gold);
-  color: var(--color-ink);
+  background: var(--color-red);
+  color: var(--color-text-inverse);
 }
 
 /* Reveal-on-scroll utility, toggled by IntersectionObserver in Reveal.tsx */

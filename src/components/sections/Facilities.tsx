@@ -1,5 +1,4 @@
 import Reveal from "@/components/ui/Reveal";
-import Eyebrow from "@/components/ui/Eyebrow";
 import VisualPanel from "@/components/ui/VisualPanel";
 
 const facilities = [
@@ -35,16 +34,9 @@ const facilities = [
 
 export default function Facilities() {
   return (
-    <section className="relative border-t border-line bg-ink px-6 py-28 md:px-10 lg:px-14 lg:py-36">
+    <section className="relative bg-paper px-6 py-20 md:px-10 lg:px-14 lg:py-28">
       <div className="mx-auto max-w-[1600px]">
-        <Reveal className="max-w-2xl">
-          <Eyebrow>Εγκαταστάσεις</Eyebrow>
-          <h2 className="mt-6 font-display text-[clamp(2.25rem,5vw,4.25rem)] italic leading-[1.05] text-paper text-balance">
-            Χώροι σχεδιασμένοι για προπόνηση.
-          </h2>
-        </Reveal>
-
-        <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
           {facilities.map((f, i) => (
             <Reveal key={f.title} delay={i * 100} className={f.span}>
               <VisualPanel
