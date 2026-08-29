@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { brand, contact, legalLinks, navItems } from "@/data/content";
 
@@ -10,7 +11,8 @@ export default function Footer() {
       <div className="mx-auto flex max-w-[1600px] flex-col gap-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.2fr_1fr_1fr_1fr]">
           <div>
-            <p className="font-display text-3xl italic text-white">
+            <Image src="/logo-mark.png" alt="HomeGym" width={295} height={145} className="h-10 w-auto" />
+            <p className="mt-3 font-display text-3xl italic text-white">
               Home<span className="text-red">Gym</span>
             </p>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-text-inverse-dim">

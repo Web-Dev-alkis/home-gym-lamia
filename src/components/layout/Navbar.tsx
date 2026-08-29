@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
@@ -46,8 +47,8 @@ export default function Navbar() {
         )}
       >
         <nav className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-10 lg:px-14">
-          <Link href="/" className="font-display text-xl italic tracking-tight text-text">
-            Home<span className="text-red">Gym</span>
+          <Link href="/" className="flex items-center" aria-label="HomeGym - Αρχική">
+            <Image src="/logo-mark.png" alt="HomeGym" width={295} height={145} className="h-9 w-auto" priority />
           </Link>
 
           <ul className="hidden items-center gap-9 lg:flex">
